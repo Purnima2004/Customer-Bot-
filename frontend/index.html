@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Customer Support Bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #5f2eea 0%, #a4508b 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            width: 360px;
+            max-width: 92vw;
+            height: 640px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #7a3cff 0%, #b86adf 100%);
+            color: white;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05em;
+            font-weight: 600;
+        }
+
+        .bot-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #fff;
+            color: #7a3cff;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.9));
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            line-height: 1.4;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #7a3cff 0%, #b86adf 100%);
+            color: white;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            border: 1px solid #e9ecef;
+            color: #333;
+        }
+
+        .message.escalated .message-content {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+
+        .message.general-knowledge .message-content {
+            background: #e8f5e8;
+            border: 1px solid #c3e6c3;
+            color: #2d5a2d;
+        }
+
+        .message.faq-based .message-content {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            color: #0d47a1;
+        }
+
+        .escalation-notice {
+            font-size: 0.85em;
+            font-style: italic;
+            margin-top: 5px;
+            color: #e17055;
+        }
+
+        .chat-input-container {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .enhanced-features {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .feature-button {
+            padding: 8px 16px;
+            background: #f4f0ff;
+            border: 1px solid #e5dbff;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .feature-button:hover {
+            background: #ece4ff;
+        }
+
+        .feature-button.active {
+            background: linear-gradient(135deg, #7a3cff 0%, #b86adf 100%);
+            color: white;
+            border-color: #7a3cff;
+        }
+
+        .summary-box {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .summary-box h4 {
+            color: #1976d2;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .actions-box {
+            background: #f3e5f5;
+            border: 1px solid #e1bee7;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .actions-box h4 {
+            color: #7b1fa2;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .action-item {
+            background: white;
+            border: 1px solid #e1bee7;
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin: 5px 0;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .action-item:hover {
+            background: #f3e5f5;
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .action-item:active {
+            transform: translateX(3px) scale(0.98);
+        }
+
+        .action-item.clicked {
+            background: #e8f5e8;
+            border-color: #4caf50;
+            color: #2e7d32;
+            animation: pulse 0.5s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            outline: none;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .chat-input input:focus {
+            border-color: #667eea;
+        }
+
+        .send-button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #7a3cff 0%, #b86adf 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .send-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .send-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .typing-indicator {
+            display: none;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .typing-indicator.show {
+            display: block;
+        }
+
+        .status-indicator {
+            position: absolute;
+            top: 18px;
+            right: 16px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #28a745;
+        }
+
+        .status-indicator.error {
+            background: #dc3545;
+        }
+
+        /* Quick reply chips */
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 8px 0 4px;
+        }
+
+        .chip {
+            background: #fff;
+            border: 1px solid #e5dbff;
+            color: #6b5cff;
+            padding: 8px 14px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 13px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: all .2s ease;
+        }
+
+        .chip:hover { background: #f4f0ff; transform: translateY(-1px); }
+
+        @media (max-width: 600px) {
+            .chat-container {
+                width: 94vw;
+                height: 86vh;
+            }
+            
+            .message-content {
+                max-width: 85%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            🤖 AI Customer Support Bot
+            <div class="status-indicator" id="statusIndicator"></div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-content">
+                    👋 Hello! I'm your AI customer support assistant. How can I help you today?
+                </div>
+            </div>
+        </div>
+        
+        <div class="typing-indicator" id="typingIndicator">
+            Bot is typing...
+        </div>
+        
+        <div class="chat-input-container">
+            <div class="enhanced-features">
+                <button id="summaryButton" class="feature-button">📋 Get Summary</button>
+                <button id="actionsButton" class="feature-button">🎯 Suggest Actions</button>
+                <label class="feature-button">
+                    <input type="checkbox" id="autoSuggestions" checked> Auto Suggestions
+                </label>
+            </div>
+            <div class="chat-input">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    placeholder="Type your message here..."
+                    maxlength="500"
+                >
+                <button id="sendButton" class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class ChatBot {
+            constructor() {
+                this.sessionId = null;
+                this.apiUrl = 'http://localhost:8000/api';
+                this.messageInput = document.getElementById('messageInput');
+                this.sendButton = document.getElementById('sendButton');
+                this.chatMessages = document.getElementById('chatMessages');
+                this.typingIndicator = document.getElementById('typingIndicator');
+                this.statusIndicator = document.getElementById('statusIndicator');
+                this.summaryButton = document.getElementById('summaryButton');
+                this.actionsButton = document.getElementById('actionsButton');
+                this.autoSuggestions = document.getElementById('autoSuggestions');
+                
+                this.setupEventListeners();
+                this.testConnection();
+            }
+            
+            setupEventListeners() {
+                this.sendButton.addEventListener('click', () => this.sendMessage());
+                this.messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.sendMessage();
+                    }
+                });
+                this.summaryButton.addEventListener('click', () => this.getSummary());
+                this.actionsButton.addEventListener('click', () => this.getActions());
+            }
+            
+            async testConnection() {
+                try {
+                    const response = await fetch('http://localhost:8000/health');
+                    if (response.ok) {
+                        this.statusIndicator.className = 'status-indicator';
+                    } else {
+                        throw new Error('Server not responding');
+                    }
+                } catch (error) {
+                    this.statusIndicator.className = 'status-indicator error';
+                    console.error('Connection test failed:', error);
+                }
+            }
+            
+            async sendMessage() {
+                const message = this.messageInput.value.trim();
+                if (!message) return;
+                
+                // Disable input while sending
+                this.messageInput.disabled = true;
+                this.sendButton.disabled = true;
+                
+                // Add user message to chat
+                this.addMessage('user', message);
+                this.messageInput.value = '';
+                
+                // Show typing indicator
+                this.showTyping(true);
+                
+                try {
+                    const response = await fetch(`${this.apiUrl}/chat`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            session_id: this.sessionId,
+                            include_suggestions: this.autoSuggestions.checked,
+                            include_summary: false
+                        })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    this.sessionId = data.session_id;
+                    
+                    // Hide typing indicator
+                    this.showTyping(false);
+                    
+                    // Add bot response with appropriate styling based on response type
+                    this.addMessage('bot', data.response, data.escalated, data.escalation_reason, data.response_type);
+                    
+                    // Add summary if available
+                    if (data.conversation_summary) {
+                        this.addSummary(data.conversation_summary);
+                    }
+                    
+                    // Add next actions if available
+                    if (data.next_actions && data.next_actions.length > 0) {
+                        this.addActions(data.next_actions);
+                    }
+                    
+                } catch (error) {
+                    this.showTyping(false);
+                    this.addMessage('bot', 'Sorry, I encountered an error. Please try again or contact support.', true, 'Connection error');
+                    console.error('Error:', error);
+                } finally {
+                    // Re-enable input
+                    this.messageInput.disabled = false;
+                    this.sendButton.disabled = false;
+                    this.messageInput.focus();
+                }
+            }
+            
+            addMessage(sender, content, escalated = false, escalationReason = null, responseType = 'faq') {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content';
+                
+                // Add styling based on response type
+                if (escalated) {
+                    contentDiv.className += ' escalated';
+                } else if (responseType === 'general') {
+                    contentDiv.className += ' general-knowledge';
+                } else if (responseType === 'faq') {
+                    contentDiv.className += ' faq-based';
+                }
+                
+                contentDiv.textContent = content;
+                messageDiv.appendChild(contentDiv);
+                
+                // Add response type indicator
+                if (sender === 'bot') {
+                    const typeIndicator = document.createElement('div');
+                    typeIndicator.className = 'response-type-indicator';
+                    typeIndicator.style.fontSize = '0.75em';
+                    typeIndicator.style.color = '#666';
+                    typeIndicator.style.marginTop = '5px';
+                    typeIndicator.style.fontStyle = 'italic';
+                    
+                    if (responseType === 'faq') {
+                        typeIndicator.textContent = '';
+                    } else if (responseType === 'general') {
+                        typeIndicator.textContent = '🌐 Answered using general knowledge';
+                    } else if (responseType === 'escalated') {
+                        typeIndicator.textContent = '🚨 Escalated to human agent';
+                    }
+                    
+                    messageDiv.appendChild(typeIndicator);
+                }
+                
+                if (escalated && escalationReason) {
+                    const escalationDiv = document.createElement('div');
+                    escalationDiv.className = 'escalation-notice';
+                    escalationDiv.textContent = `⚠️ ${escalationReason}`;
+                    messageDiv.appendChild(escalationDiv);
+                }
+                
+                this.chatMessages.appendChild(messageDiv);
+                this.scrollToBottom();
+            }
+            
+            showTyping(show) {
+                if (show) {
+                    this.typingIndicator.classList.add('show');
+                } else {
+                    this.typingIndicator.classList.remove('show');
+                }
+                this.scrollToBottom();
+            }
+            
+            scrollToBottom() {
+                this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+            }
+            
+            addSummary(summary) {
+                const summaryDiv = document.createElement('div');
+                summaryDiv.className = 'summary-box';
+                summaryDiv.innerHTML = `
+                    <h4>📋 Conversation Summary</h4>
+                    <p>${summary}</p>
+                `;
+                this.chatMessages.appendChild(summaryDiv);
+                this.scrollToBottom();
+            }
+            
+            addActions(actions) {
+                const actionsDiv = document.createElement('div');
+                actionsDiv.className = 'actions-box';
+                actionsDiv.innerHTML = `
+                    <h4>🎯 Suggested Next Actions</h4>
+                    ${actions.map((action, index) => `<div class="action-item" data-action="${index}">${action}</div>`).join('')}
+                `;
+                
+                // Add click event listeners to each action item
+                const actionItems = actionsDiv.querySelectorAll('.action-item');
+                actionItems.forEach((item, index) => {
+                    item.addEventListener('click', () => {
+                        // Visual feedback
+                        item.classList.add('clicked');
+                        
+                        // Auto-populate and submit the action as a question
+                        const actionText = actions[index];
+                        this.messageInput.value = actionText;
+                        this.messageInput.focus();
+                        
+                        // Show loading state
+                        const originalText = item.textContent;
+                        item.textContent = '⏳ Sending...';
+                        
+                        // Auto-submit after a short delay for better UX
+                        setTimeout(() => {
+                            this.sendMessage();
+                            
+                            // Restore original text and remove visual feedback
+                            setTimeout(() => {
+                                item.textContent = originalText;
+                                item.classList.remove('clicked');
+                            }, 1000);
+                        }, 300);
+                    });
+                });
+                
+                this.chatMessages.appendChild(actionsDiv);
+                this.scrollToBottom();
+            }
+            
+            async getSummary() {
+                if (!this.sessionId) {
+                    alert('Please start a conversation first!');
+                    return;
+                }
+                
+                this.summaryButton.disabled = true;
+                this.summaryButton.textContent = '⏳ Getting Summary...';
+                
+                try {
+                    const response = await fetch(`${this.apiUrl}/summarize`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            session_id: this.sessionId
+                        })
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        this.addSummary(data.summary);
+                    } else {
+                        throw new Error('Failed to get summary');
+                    }
+                } catch (error) {
+                    this.addMessage('bot', 'Sorry, I could not generate a summary. Please try again.', true, 'Summary error');
+                    console.error('Summary error:', error);
+                } finally {
+                    this.summaryButton.disabled = false;
+                    this.summaryButton.textContent = '📋 Get Summary';
+                }
+            }
+            
+            async getActions() {
+                if (!this.sessionId) {
+                    alert('Please start a conversation first!');
+                    return;
+                }
+                
+                this.actionsButton.disabled = true;
+                this.actionsButton.textContent = '⏳ Getting Actions...';
+                
+                try {
+                    const response = await fetch(`${this.apiUrl}/suggest-actions`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            session_id: this.sessionId
+                        })
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        this.addActions(data.actions);
+                    } else {
+                        throw new Error('Failed to get actions');
+                    }
+                } catch (error) {
+                    this.addMessage('bot', 'Sorry, I could not generate action suggestions. Please try again.', true, 'Actions error');
+                    console.error('Actions error:', error);
+                } finally {
+                    this.actionsButton.disabled = false;
+                    this.actionsButton.textContent = '🎯 Suggest Actions';
+                }
+            }
+        }
+        
+        // Initialize the chat bot when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new ChatBot();
+        });
+    </script>
+</body>
+</html>

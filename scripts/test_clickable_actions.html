@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Clickable Actions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .actions-box {
+            background: #f3e5f5;
+            border: 1px solid #e1bee7;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .actions-box h4 {
+            color: #7b1fa2;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .action-item {
+            background: white;
+            border: 1px solid #e1bee7;
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin: 5px 0;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+        
+        .action-item:hover {
+            background: #f3e5f5;
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .action-item:active {
+            transform: translateX(3px) scale(0.98);
+        }
+        
+        .action-item.clicked {
+            background: #e8f5e8;
+            border-color: #4caf50;
+            color: #2e7d32;
+        }
+        
+        .chat-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            outline: none;
+            font-size: 16px;
+        }
+        
+        .send-button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .log {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Test Clickable Actions</h1>
+        <p>Click on any suggested action below to test the auto-populate and submit functionality:</p>
+        
+        <div class="actions-box">
+            <h4>🎯 Suggested Next Actions</h4>
+            <div class="action-item" data-action="0">Look for a 'Sign In' or 'Log In' button, typically in the top right corner of our website, and click it to access the login page.</div>
+            <div class="action-item" data-action="1">On the login page, enter your registered email address and password into the designated fields, then click the 'Sign In' button.</div>
+            <div class="action-item" data-action="2">If you have forgotten your password, click the 'Forgot Password' link on the login page to reset it. I can walk you through those specific steps if you need.</div>
+            <div class="action-item" data-action="3">If you do not yet have an account, you will need to create one before you can sign in. I can provide the instructions for creating an account based on our FAQs.</div>
+            <div class="action-item" data-action="4">Please let me know if you are stuck at a specific point in this process, such as finding the login page, remembering your credentials, or something else.</div>
+        </div>
+        
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Click an action above to auto-populate this field..." readonly>
+            <button id="sendButton" class="send-button">Send</button>
+        </div>
+        
+        <div class="log" id="log">
+            <strong>Test Log:</strong><br>
+            Ready to test clickable actions...
+        </div>
+    </div>
+
+    <script>
+        class ActionTester {
+            constructor() {
+                this.messageInput = document.getElementById('messageInput');
+                this.sendButton = document.getElementById('sendButton');
+                this.log = document.getElementById('log');
+                
+                this.setupEventListeners();
+                this.logMessage('Action tester initialized');
+            }
+            
+            setupEventListeners() {
+                const actionItems = document.querySelectorAll('.action-item');
+                actionItems.forEach((item, index) => {
+                    item.addEventListener('click', () => {
+                        this.handleActionClick(item, index);
+                    });
+                });
+                
+               
+                this.sendButton.addEventListener('click', () => {
+                    this.sendMessage();
+                });
+            }
+            
+            handleActionClick(item, index) {
+                const actionText = item.textContent;
+                
+            
+                item.classList.add('clicked');
+                this.logMessage(`✅ Action ${index + 1} clicked: "${actionText.substring(0, 50)}..."`);
+                
+              
+                this.messageInput.value = actionText;
+                this.messageInput.focus();
+                this.logMessage('📝 Input field populated');
+            
+                setTimeout(() => {
+                    this.sendMessage();
+                }, 300);
+                
+            
+                setTimeout(() => {
+                    item.classList.remove('clicked');
+                }, 1000);
+            }
+            
+            sendMessage() {
+                const message = this.messageInput.value.trim();
+                if (!message) {
+                    this.logMessage('⚠️ No message to send');
+                    return;
+                }
+                
+                this.logMessage(`🚀 Sending message: "${message.substring(0, 50)}..."`);
+                this.messageInput.value = '';
+                
+             
+                setTimeout(() => {
+                    this.logMessage('✅ Message sent successfully!');
+                    this.logMessage('🤖 Bot would respond with relevant information...');
+                }, 1000);
+            }
+            
+            logMessage(message) {
+                const timestamp = new Date().toLocaleTimeString();
+                this.log.innerHTML += `<br>[${timestamp}] ${message}`;
+                this.log.scrollTop = this.log.scrollHeight;
+            }
+        }
+        
+     
+        document.addEventListener('DOMContentLoaded', () => {
+            new ActionTester();
+        });
+    </script>
+</body>
+</html>
+
