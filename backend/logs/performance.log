@@ -1,0 +1,811 @@
+2025-10-14 22:11:28,454 - Starting Customer Bot application
+2025-10-14 22:11:28,463 - Application startup complete
+2025-10-14 22:11:44,325 - Starting Customer Bot application
+2025-10-14 22:11:44,336 - Application startup complete
+2025-10-14 22:11:57,285 - Starting Customer Bot application
+2025-10-14 22:11:57,292 - Application startup complete
+2025-10-14 22:13:58,766 - Shutting down Customer Bot application
+2025-10-14 22:13:58,768 - Application shutdown complete
+2025-10-14 22:14:13,567 - Starting Customer Bot application
+2025-10-14 22:14:13,579 - Application startup complete
+2025-10-14 22:14:28,523 - Starting Customer Bot application
+2025-10-14 22:14:28,531 - Application startup complete
+2025-10-14 22:14:45,062 - Starting Customer Bot application
+2025-10-14 22:14:45,074 - Application startup complete
+2025-10-14 22:14:59,802 - Starting Customer Bot application
+2025-10-14 22:14:59,812 - Application startup complete
+2025-10-14 22:15:12,463 - Starting Customer Bot application
+2025-10-14 22:15:12,473 - Application startup complete
+2025-10-14 22:16:12,536 - Shutting down Customer Bot application
+2025-10-14 22:16:12,675 - Application shutdown complete
+2025-10-14 22:16:24,195 - Starting Customer Bot application
+2025-10-14 22:16:24,202 - Application startup complete
+2025-10-15 05:33:33,743 - Starting Customer Bot application
+2025-10-15 05:33:33,757 - Application startup complete
+2025-10-15 07:04:12,607 - GET / - 404
+2025-10-15 07:04:13,058 - GET /favicon.ico - 404
+2025-10-15 07:09:16,763 - GET /health - 200
+2025-10-15 07:09:47,421 - GET /docs - 200
+2025-10-15 07:09:47,671 - GET /openapi.json - 200
+2025-10-15 07:19:24,367 - Shutting down Customer Bot application
+2025-10-15 07:20:39,649 - Starting Customer Bot application
+2025-10-15 07:20:39,673 - Application startup complete
+2025-10-15 08:13:09,003 - Shutting down Customer Bot application
+2025-10-15 08:13:09,004 - Application shutdown complete
+2025-10-15 16:14:41,320 - Starting Customer Bot application
+2025-10-15 16:14:41,334 - Background tasks initialized
+2025-10-15 16:14:41,335 - Application startup complete
+2025-10-15 16:14:44,492 - Shutting down Customer Bot application
+2025-10-15 16:14:44,493 - Application shutdown complete
+2025-10-15 16:14:54,284 - Starting Customer Bot application
+2025-10-15 16:14:54,290 - Background tasks initialized
+2025-10-15 16:14:54,290 - Application startup complete
+2025-10-15 16:15:07,030 - Shutting down Customer Bot application
+2025-10-15 16:15:07,030 - Application shutdown complete
+2025-10-15 16:15:17,117 - Starting Customer Bot application
+2025-10-15 16:15:17,122 - Background tasks initialized
+2025-10-15 16:15:17,123 - Application startup complete
+2025-10-15 16:15:21,894 - Shutting down Customer Bot application
+2025-10-15 16:15:21,894 - Application shutdown complete
+2025-10-15 16:15:30,296 - Starting Customer Bot application
+2025-10-15 16:15:30,301 - Background tasks initialized
+2025-10-15 16:15:30,302 - Application startup complete
+2025-10-15 16:15:38,624 - Starting Customer Bot application
+2025-10-15 16:15:38,631 - Background tasks initialized
+2025-10-15 16:15:38,631 - Application startup complete
+2025-10-15 16:15:54,409 - GET / - 404
+2025-10-15 16:15:54,816 - GET /favicon.ico - 404
+2025-10-15 16:15:57,072 - GET / - 404
+2025-10-15 16:16:02,641 - GET /docs - 200
+2025-10-15 16:16:02,880 - GET /openapi.json - 200
+2025-10-15 16:16:50,836 - Error occurred: (sqlite3.OperationalError) table chat_sessions has no column named expires_at
+[SQL: INSERT INTO chat_sessions (id, created_at, updated_at, expires_at, is_active, message_count, last_activity) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('02a703a0-ad1b-4920-8206-62c59b89c12b', '2025-10-15 10:46:50.831474', '2025-10-15 10:46:50.831474', '2025-10-16 10:46:50.815582', 1, 0, '2025-10-15 10:46:50.831474')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 48, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 40, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 132, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 115, in run
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: table chat_sessions has no column named expires_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Projects\Customer_Bot\backend\app\api\chat.py", line 23, in chat
+    session = await service.get_or_create_session(req.session_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\backend\app\services\session_manager.py", line 48, in get_or_create_session
+    await self.db.flush()
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 800, in flush
+    await greenlet_spawn(self.sync_session.flush, objects=objects)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 48, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 40, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 132, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 115, in run
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table chat_sessions has no column named expires_at
+[SQL: INSERT INTO chat_sessions (id, created_at, updated_at, expires_at, is_active, message_count, last_activity) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('02a703a0-ad1b-4920-8206-62c59b89c12b', '2025-10-15 10:46:50.831474', '2025-10-15 10:46:50.831474', '2025-10-16 10:46:50.815582', 1, 0, '2025-10-15 10:46:50.831474')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-10-15 16:16:51,037 - Unexpected error: (sqlite3.OperationalError) table chat_sessions has no column named expires_at
+[SQL: INSERT INTO chat_sessions (id, created_at, updated_at, expires_at, is_active, message_count, last_activity) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('02a703a0-ad1b-4920-8206-62c59b89c12b', '2025-10-15 10:46:50.831474', '2025-10-15 10:46:50.831474', '2025-10-16 10:46:50.815582', 1, 0, '2025-10-15 10:46:50.831474')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 48, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 40, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 132, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 115, in run
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: table chat_sessions has no column named expires_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Projects\Customer_Bot\backend\app\middleware\error_handler.py", line 27, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 123, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 109, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 387, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 288, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\backend\app\api\chat.py", line 23, in chat
+    session = await service.get_or_create_session(req.session_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\backend\app\services\session_manager.py", line 48, in get_or_create_session
+    await self.db.flush()
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 800, in flush
+    await greenlet_spawn(self.sync_session.flush, objects=objects)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 48, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 40, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 132, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 115, in run
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table chat_sessions has no column named expires_at
+[SQL: INSERT INTO chat_sessions (id, created_at, updated_at, expires_at, is_active, message_count, last_activity) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('02a703a0-ad1b-4920-8206-62c59b89c12b', '2025-10-15 10:46:50.831474', '2025-10-15 10:46:50.831474', '2025-10-16 10:46:50.815582', 1, 0, '2025-10-15 10:46:50.831474')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-10-15 16:16:51,091 - Slow request: POST /api/chat - 6.454s
+2025-10-15 16:17:32,923 - GET /docs - 200
+2025-10-15 16:17:33,057 - GET /openapi.json - 200
+2025-10-15 16:17:53,061 - Error occurred: (sqlite3.OperationalError) table chat_sessions has no column named expires_at
+[SQL: INSERT INTO chat_sessions (id, created_at, updated_at, expires_at, is_active, message_count, last_activity) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('50693a44-3212-4346-b3fb-81cb90cd61aa', '2025-10-15 10:47:53.059121', '2025-10-15 10:47:53.059121', '2025-10-16 10:47:53.051131', 1, 0, '2025-10-15 10:47:53.059121')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 48, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 40, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 132, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 115, in run
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: table chat_sessions has no column named expires_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Projects\Customer_Bot\backend\app\api\chat.py", line 23, in chat
+    session = await service.get_or_create_session(req.session_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\backend\app\services\session_manager.py", line 48, in get_or_create_session
+    await self.db.flush()
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 800, in flush
+    await greenlet_spawn(self.sync_session.flush, objects=objects)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 48, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 40, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 132, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 115, in run
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table chat_sessions has no column named expires_at
+[SQL: INSERT INTO chat_sessions (id, created_at, updated_at, expires_at, is_active, message_count, last_activity) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('50693a44-3212-4346-b3fb-81cb90cd61aa', '2025-10-15 10:47:53.059121', '2025-10-15 10:47:53.059121', '2025-10-16 10:47:53.051131', 1, 0, '2025-10-15 10:47:53.059121')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-10-15 16:17:53,084 - Unexpected error: (sqlite3.OperationalError) table chat_sessions has no column named expires_at
+[SQL: INSERT INTO chat_sessions (id, created_at, updated_at, expires_at, is_active, message_count, last_activity) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('50693a44-3212-4346-b3fb-81cb90cd61aa', '2025-10-15 10:47:53.059121', '2025-10-15 10:47:53.059121', '2025-10-16 10:47:53.051131', 1, 0, '2025-10-15 10:47:53.059121')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 48, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 40, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 132, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 115, in run
+    result = function()
+             ^^^^^^^^^^
+sqlite3.OperationalError: table chat_sessions has no column named expires_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\Projects\Customer_Bot\backend\app\middleware\error_handler.py", line 27, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 123, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 109, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 387, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 288, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\backend\app\api\chat.py", line 23, in chat
+    session = await service.get_or_create_session(req.session_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\backend\app\services\session_manager.py", line 48, in get_or_create_session
+    await self.db.flush()
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 800, in flush
+    await greenlet_spawn(self.sync_session.flush, objects=objects)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4352, in flush
+    self._flush(objects)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4487, in _flush
+    with util.safe_reraise():
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4448, in _flush
+    flush_context.execute()
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 147, in execute
+    self._adapt_connection._handle_exception(error)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 298, in _handle_exception
+    raise error
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\aiosqlite.py", line 129, in execute
+    self.await_(_cursor.execute(operation, parameters))
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 48, in execute
+    await self._execute(self._cursor.execute, sql, parameters)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\cursor.py", line 40, in _execute
+    return await self._conn._execute(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 132, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\aiosqlite\core.py", line 115, in run
+    result = function()
+             ^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table chat_sessions has no column named expires_at
+[SQL: INSERT INTO chat_sessions (id, created_at, updated_at, expires_at, is_active, message_count, last_activity) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('50693a44-3212-4346-b3fb-81cb90cd61aa', '2025-10-15 10:47:53.059121', '2025-10-15 10:47:53.059121', '2025-10-16 10:47:53.051131', 1, 0, '2025-10-15 10:47:53.059121')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-10-15 16:17:53,101 - Slow request: POST /api/chat - 4.170s
+2025-10-15 16:18:42,180 - Shutting down Customer Bot application
+2025-10-15 16:18:42,181 - Application shutdown complete
+2025-10-15 16:18:54,919 - Starting Customer Bot application
+2025-10-15 16:18:54,954 - Background tasks initialized
+2025-10-15 16:18:54,954 - Application startup complete
+2025-10-15 16:19:03,212 - Starting Customer Bot application
+2025-10-15 16:19:03,220 - Background tasks initialized
+2025-10-15 16:19:03,220 - Application startup complete
+2025-10-15 16:19:06,376 - Shutting down Customer Bot application
+2025-10-15 16:19:06,377 - Application shutdown complete
+2025-10-15 16:19:15,638 - Starting Customer Bot application
+2025-10-15 16:19:15,644 - Background tasks initialized
+2025-10-15 16:19:15,644 - Application startup complete
+2025-10-15 16:19:22,542 - Error occurred: 'Logger' object has no attribute 'info'
+Traceback (most recent call last):
+  File "E:\Projects\Customer_Bot\backend\app\api\chat.py", line 23, in chat
+    session = await service.get_or_create_session(req.session_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\backend\app\services\session_manager.py", line 50, in get_or_create_session
+    logger.info(f"Created new session: {session.id}")
+    ^^^^^^^^^^^
+AttributeError: 'Logger' object has no attribute 'info'
+2025-10-15 16:19:22,548 - Unexpected error: 'Logger' object has no attribute 'info'
+Traceback (most recent call last):
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Projects\Customer_Bot\backend\app\middleware\error_handler.py", line 27, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 123, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 109, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 387, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\.venv\Lib\site-packages\fastapi\routing.py", line 288, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\backend\app\api\chat.py", line 23, in chat
+    session = await service.get_or_create_session(req.session_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Customer_Bot\backend\app\services\session_manager.py", line 50, in get_or_create_session
+    logger.info(f"Created new session: {session.id}")
+    ^^^^^^^^^^^
+AttributeError: 'Logger' object has no attribute 'info'
+2025-10-15 16:19:22,577 - Slow request: POST /api/chat - 6.922s
+2025-10-15 16:20:58,750 - Shutting down Customer Bot application
+2025-10-15 16:20:58,751 - Application shutdown complete
+2025-10-15 16:21:10,885 - Starting Customer Bot application
+2025-10-15 16:21:10,908 - Background tasks initialized
+2025-10-15 16:21:10,908 - Application startup complete
+2025-10-15 16:21:18,110 - Shutting down Customer Bot application
+2025-10-15 16:21:18,116 - Application shutdown complete
+2025-10-15 16:21:29,289 - Starting Customer Bot application
+2025-10-15 16:21:29,296 - Background tasks initialized
+2025-10-15 16:21:29,297 - Application startup complete
+2025-10-15 16:41:59,440 - Created new session: 20114eb6-15c9-41fb-a984-f16f6dc4ec18
+2025-10-15 16:42:28,503 - Chat interaction completed
+2025-10-15 16:42:28,623 - POST /api/chat - 200
+2025-10-15 16:42:28,624 - Slow request: POST /api/chat - 34.988s
+2025-10-15 16:42:58,330 - Chat interaction completed
+2025-10-15 16:42:58,395 - POST /api/chat - 200
+2025-10-15 16:42:58,396 - Slow request: POST /api/chat - 23.535s
+2025-10-15 16:43:48,867 - Shutting down Customer Bot application
+2025-10-15 16:43:48,890 - Application shutdown complete
+2025-10-15 16:44:04,532 - Starting Customer Bot application
+2025-10-15 16:44:04,542 - Background tasks initialized
+2025-10-15 16:44:04,543 - Application startup complete
+2025-10-15 16:46:21,251 - Starting Customer Bot application
+2025-10-15 16:46:21,258 - Background tasks initialized
+2025-10-15 16:46:21,259 - Application startup complete
+2025-10-15 16:46:31,524 - Shutting down Customer Bot application
+2025-10-15 16:46:31,525 - Application shutdown complete
+2025-10-15 16:46:41,216 - Starting Customer Bot application
+2025-10-15 16:46:41,221 - Background tasks initialized
+2025-10-15 16:46:41,222 - Application startup complete
+2025-10-15 16:54:23,573 - Shutting down Customer Bot application
+2025-10-15 16:54:23,595 - Application shutdown complete
+2025-10-15 16:54:32,536 - Starting Customer Bot application
+2025-10-15 16:54:32,541 - Background tasks initialized
+2025-10-15 16:54:32,542 - Application startup complete
+2025-10-15 18:34:06,394 - Shutting down Customer Bot application
+2025-10-15 18:34:06,410 - Application shutdown complete
+2025-10-15 18:34:28,669 - Starting Customer Bot application
+2025-10-15 18:34:28,688 - Background tasks initialized
+2025-10-15 18:34:28,688 - Application startup complete
+2025-10-15 18:34:42,686 - Starting Customer Bot application
+2025-10-15 18:34:42,696 - Background tasks initialized
+2025-10-15 18:34:42,696 - Application startup complete
+2025-10-15 18:34:56,915 - Starting Customer Bot application
+2025-10-15 18:34:56,925 - Background tasks initialized
+2025-10-15 18:34:56,926 - Application startup complete
+2025-10-15 18:35:11,988 - Starting Customer Bot application
+2025-10-15 18:35:12,001 - Background tasks initialized
+2025-10-15 18:35:12,002 - Application startup complete
+2025-10-15 18:35:25,811 - Starting Customer Bot application
+2025-10-15 18:35:25,823 - Background tasks initialized
+2025-10-15 18:35:25,823 - Application startup complete
+2025-10-15 18:35:38,461 - Starting Customer Bot application
+2025-10-15 18:35:38,470 - Background tasks initialized
+2025-10-15 18:35:38,470 - Application startup complete
+2025-10-15 18:35:53,097 - Starting Customer Bot application
+2025-10-15 18:35:53,107 - Background tasks initialized
+2025-10-15 18:35:53,107 - Application startup complete
+2025-10-15 18:36:06,523 - Starting Customer Bot application
+2025-10-15 18:36:06,538 - Background tasks initialized
+2025-10-15 18:36:06,538 - Application startup complete
+2025-10-15 18:36:20,329 - Starting Customer Bot application
+2025-10-15 18:36:20,338 - Background tasks initialized
+2025-10-15 18:36:20,339 - Application startup complete
+2025-10-15 18:36:34,766 - Starting Customer Bot application
+2025-10-15 18:36:34,776 - Background tasks initialized
+2025-10-15 18:36:34,777 - Application startup complete
+2025-10-15 18:36:46,759 - Starting Customer Bot application
+2025-10-15 18:36:46,767 - Background tasks initialized
+2025-10-15 18:36:46,768 - Application startup complete
+2025-10-15 18:36:58,678 - Starting Customer Bot application
+2025-10-15 18:36:58,690 - Background tasks initialized
+2025-10-15 18:36:58,691 - Application startup complete
+2025-10-15 18:37:08,886 - Shutting down Customer Bot application
+2025-10-15 18:37:08,887 - Application shutdown complete
+2025-10-15 18:37:23,193 - Starting Customer Bot application
+2025-10-15 18:37:23,202 - Background tasks initialized
+2025-10-15 18:37:23,202 - Application startup complete
+2025-10-15 18:37:38,084 - Starting Customer Bot application
+2025-10-15 18:37:38,094 - Background tasks initialized
+2025-10-15 18:37:38,095 - Application startup complete
+2025-10-15 18:37:58,324 - Shutting down Customer Bot application
+2025-10-15 18:37:58,325 - Application shutdown complete
+2025-10-15 18:38:11,686 - Starting Customer Bot application
+2025-10-15 18:38:11,701 - Background tasks initialized
+2025-10-15 18:38:11,703 - Application startup complete
+2025-10-15 18:38:25,457 - Starting Customer Bot application
+2025-10-15 18:38:25,466 - Background tasks initialized
+2025-10-15 18:38:25,467 - Application startup complete
+2025-10-15 18:38:39,455 - Starting Customer Bot application
+2025-10-15 18:38:39,465 - Background tasks initialized
+2025-10-15 18:38:39,465 - Application startup complete
+2025-10-15 18:38:55,039 - Starting Customer Bot application
+2025-10-15 18:38:55,049 - Background tasks initialized
+2025-10-15 18:38:55,049 - Application startup complete
+2025-10-15 18:39:09,816 - Starting Customer Bot application
+2025-10-15 18:39:09,827 - Background tasks initialized
+2025-10-15 18:39:09,828 - Application startup complete
+2025-10-15 18:39:22,991 - Starting Customer Bot application
+2025-10-15 18:39:23,003 - Background tasks initialized
+2025-10-15 18:39:23,003 - Application startup complete
+2025-10-15 18:39:38,110 - Starting Customer Bot application
+2025-10-15 18:39:38,121 - Background tasks initialized
+2025-10-15 18:39:38,122 - Application startup complete
+2025-10-15 18:39:56,077 - Starting Customer Bot application
+2025-10-15 18:39:56,089 - Background tasks initialized
+2025-10-15 18:39:56,090 - Application startup complete
+2025-10-15 18:39:59,846 - Shutting down Customer Bot application
+2025-10-15 18:39:59,847 - Application shutdown complete
+2025-10-15 18:40:13,812 - Starting Customer Bot application
+2025-10-15 18:40:13,824 - Background tasks initialized
+2025-10-15 18:40:13,824 - Application startup complete
+2025-10-15 18:40:29,279 - Starting Customer Bot application
+2025-10-15 18:40:29,292 - Background tasks initialized
+2025-10-15 18:40:29,293 - Application startup complete
+2025-10-15 18:40:42,682 - Starting Customer Bot application
+2025-10-15 18:40:42,693 - Background tasks initialized
+2025-10-15 18:40:42,693 - Application startup complete
+2025-10-15 18:49:16,689 - Shutting down Customer Bot application
+2025-10-15 18:49:16,690 - Application shutdown complete
+2025-10-15 18:49:26,799 - Starting Customer Bot application
+2025-10-15 18:49:26,807 - Background tasks initialized
+2025-10-15 18:49:26,808 - Application startup complete
+2025-10-15 18:49:35,978 - Starting Customer Bot application
+2025-10-15 18:49:35,985 - Background tasks initialized
+2025-10-15 18:49:35,985 - Application startup complete
+2025-10-15 18:49:44,876 - Starting Customer Bot application
+2025-10-15 18:49:44,884 - Background tasks initialized
+2025-10-15 18:49:44,884 - Application startup complete
+2025-10-15 18:49:45,319 - Shutting down Customer Bot application
+2025-10-15 18:49:45,319 - Application shutdown complete
+2025-10-15 18:49:55,347 - Starting Customer Bot application
+2025-10-15 18:49:55,353 - Background tasks initialized
+2025-10-15 18:49:55,354 - Application startup complete
+2025-10-15 18:50:04,334 - Starting Customer Bot application
+2025-10-15 18:50:04,340 - Background tasks initialized
+2025-10-15 18:50:04,340 - Application startup complete
+2025-10-15 19:19:33,504 - GET /health - 200
+2025-10-15 19:22:33,208 - GET /health - 200
+2025-10-15 19:32:35,385 - GET /health - 200
+2025-10-15 19:32:50,831 - Created new session: 94693981-1fc1-42eb-bd60-2dfbdbda4dee
+2025-10-15 19:33:15,048 - Chat interaction completed
+2025-10-15 19:33:15,115 - POST /api/chat - 200
+2025-10-15 19:33:15,115 - Slow request: POST /api/chat - 32.455s
+2025-10-15 19:33:44,770 - Chat interaction completed
+2025-10-15 19:33:44,822 - POST /api/chat - 200
+2025-10-15 19:33:44,823 - Slow request: POST /api/chat - 24.860s
+2025-10-15 19:34:25,508 - Chat interaction completed
+2025-10-15 19:34:25,608 - POST /api/chat - 200
+2025-10-15 19:34:25,612 - Slow request: POST /api/chat - 27.952s
+2025-10-15 19:35:37,055 - Chat interaction completed
+2025-10-15 19:35:37,109 - POST /api/chat - 200
+2025-10-15 19:35:37,110 - Slow request: POST /api/chat - 36.317s
