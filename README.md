@@ -4,7 +4,7 @@ A production-ready, AI-powered customer support bot with Retrieval-Augmented Gen
 
 ---
 
-## 1) What This Project Does (Plain English)
+## 1) Features of the Project:
 
 - Answers customer questions using your FAQ knowledge base (vector search + embeddings)
 - Falls back to general LLM knowledge when FAQs don’t cover it
@@ -22,7 +22,7 @@ A production-ready, AI-powered customer support bot with Retrieval-Augmented Gen
 - Database: SQLite (async via SQLAlchemy)
 - Vector DB: Pinecone (semantic search)
 - Embeddings: `intfloat/e5-base-v2` via sentence-transformers
-- LLM: Google Gemini (configurable model name)
+- LLM: Google Gemini (gemini-1.5-flash)
 
 ---
 
@@ -282,3 +282,4 @@ python scripts/ingest_hf_dataset.py
 ## 13) License
 
 For recruitment demo and evaluation purposes.
+
